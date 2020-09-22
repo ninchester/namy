@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Creator</title>
+  <link href="css/generator.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Grenze+Gotisch&family=Noto+Serif&family=Raleway&family=Syne:wght@500&display=swap" rel="stylesheet">
+  <script src="js/name_creator.js"></script>
+</head>
+<body>
+  <div id="root">
+    <div class="main_container">
+      <div class="generated_name_container">
+        <label id="generatedName" class="generated_name_text"/>
+      </div>
+      <button onclick="createName()" class="generate_button">Generate Name</button>
+      <div class="settings">
+        <a id="showSettingsLink" href="#" onclick="showHideAdvancedSettings()" class="show_settings_link">Show settings</a>
+
+        <div id="settings" class="settings_container" style="display: none">
+          <div class="slide_container">
+            <div>Number of Letters: <label type="text" id="letterRangeNumber">5</label></div>
+            <input type="range" min="1" max="9" value="5" class="slider" id="letterSizeSlider"  onchange="updateRange(this.value)">
+          </div>
+          <div class="beginning_container">
+            <label>Beginning:</label>
+            <input type="text" id="beginningOfWord" maxlength="8" onchange="updateBeginning()"></input>
+          </div>
+          <div class="ending_container">
+            <label>Ending:</label>
+            <input type="text" id="endingOfWord" maxlength="8" onchange="updateEnding()"></input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
